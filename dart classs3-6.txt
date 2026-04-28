@@ -1,0 +1,164 @@
+dart classs3 
+
+function with /without argument and return type 
+example
+
+examples addition of three numbers
+multiplication of three numbers
+
+dart class4
+
+android studio setup with plugins flutter and dart .
+copy and place path in environmental variable
+copy and paste path in android studio
+lib to main-chrome(web)
+
+standard program flutter gets executed.(refactor to rename to new dart prog)
+
+dart 5
+classes and object
+
+
+class to function
+class that looks like function is a constructor
+
+class name object no.= function constructor
+
+2 classes with two functions
+
+class Language
+{
+void tamil(){
+      print('Tamil is mothertounge') ; 
+        
+    }
+void english(){
+    print('English is global language');
+}
+    
+}
+
+class Mark
+{
+void tamilMark(){
+    print('Tamil mark is 90');
+    
+}
+
+void englishMark(){
+    print('English mark is 92');
+}
+}
+
+void main()
+{
+    Language lang = Language();
+    lang.tamil();
+    lang.english();
+    Mark mar = Mark();
+    mar.tamilMark();
+    mar.englishMark();
+}
+
+ Output:
+Tamil is mothertounge
+English is global language
+Tamil mark is 90
+English mark is 92
+
+
+class 6:
+
+example 1
+
+class Page{
+    String bgcolor;
+    String title;
+    Page(this.bgcolor,this.title){
+       
+    }
+     show(){
+            print(this.bgcolor);
+            print(this.title);
+            
+        }
+}
+void main()
+{
+Page mpage = Page('green','homepage');
+mpage.show();
+Page propage = Page('red','profile page');
+propage.show();
+}
+
+
+example 2
+
+class Subject{
+  late int a;
+  late String b; //assign variable
+  late double c;
+  
+  //int =1233457678
+  //string='surya'
+  //char='a'
+   
+ void student(){
+    print('$a $b $c');    //nonparameterized constructor
+}
+  
+  Subject(int age,String rollno,double price){
+//     8=a;
+//     5=b;
+    
+//     a=8,    parameterized constructor
+//     b=5;
+     
+a =  age;
+b = rollno;
+c=price;
+  }
+  
+}
+
+void main()
+{
+    Subject sub = Subject(8,'ram',2.7);
+    sub.student();
+
+    }  
+
+
+3. example 3 student
+
+
+class Student{
+   late int a;
+  late String b;
+   late double c;
+  
+ 
+  
+  Student(int age,String rollno,double mark){
+//     8=a;
+//     5=b;
+    
+//     a=8,
+//     b=5;
+     a =  age;
+    b = rollno;
+    c=mark;
+  }
+  
+     void show(){
+    print('$a $b $c');
+}
+}
+
+void main()
+{
+    Student sub = Student(27,'ram',80);
+
+            sub.show();
+
+    } 
