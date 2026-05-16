@@ -1,38 +1,37 @@
-dart
-class 12-class 15
+//dart
+//class 12-class 15
 
-widget build function UI.
-In flutter importing is essential for accessing code defined outside your current file. So it is necessary to import.
+//widget build function UI.In flutter importing is essential for accessing code defined outside your current file. So it is necessary to import.
 Source code might not be accessible.So import.
 
-Stateful widget dynamic mutable copnents that updte their appearance or behavior in real time based on user interaction data changes. 
+//Stateful widget dynamic mutable copnents that updte their appearance or behavior in real time based on user interaction data changes. 
   
-Stateless widget is a static building block in flutter that describes part of a user interface that des not change overtime.
+//Stateless widget is a static building block in flutter that describes part of a user interface that des not change overtime.
 
-Material app is a high level convenience widget that serves as the entry point for applications designed using Google material design
+//Material app is a high level convenience widget that serves as the entry point for applications designed using Google material design
 
-Core Functions: Theming,Navigation,Material Design Tools,Localization.
+//Core Functions: Theming,Navigation,Material Design Tools,Localization.
 How to write title and body.Adjust height and width or column.Alignment
  
-Buttons and message printer,Main Axis Alignment,Image upload,dropdown list,drawer,enter text onpressed couter,navigation bar,scroll down
+//Buttons and message printer,Main Axis Alignment,Image upload,dropdown list,drawer,enter text onpressed couter,navigation bar,scroll down
 
-Material package in flutter(package:flutter/material dart) is a core library that provides a comprehensive set of widgets implementing google design.
+//Material package in flutter(package:flutter/material dart) is a core library that provides a comprehensive set of widgets implementing google design.
 
-theme-material app
+//theme-material app
 App-will be material app
 
-Scaffold is a class in flutter that provides many widgets or we can say 
+//Scaffold is a class in flutter that provides many widgets or we can say 
 API.
-Example of stateful and stateless widget.
-Appbar and name should change on icon clicked.
+//Example of stateful and stateless widget.
+//Appbar and name should change on icon clicked.
 
-Stateless and Stateful widget -> build method
+//Stateless and Stateful widget -> build method
 Placeholder => PlaceHolder()
 Scaffold appbar and body
 icon button in leading and action
 [] arrays can add many widgets
 
-example onpressed message:
+//example onpressed message:
 
 import 'package:flutter/material.dart';
 
