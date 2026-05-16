@@ -1,0 +1,127 @@
+1.Why inherit?
+In order to add functionality to a class we need to inherit. Class cannot be modified. Inheritance allows you to define a class that extends the functionality of another class.
+
+Dart supports single inheritance. It means that a class can inherit from a single class. Dart doesn’t support multiple inheritance. In other words, a class cannot inherit from two or more classes.
+
+2.class Grandparent
+{
+  void getGrandparentdetails(){
+    print('Grandfather name-ACK');
+  }
+  void getGrandparentproperty(){
+    print('Grandfather property-Gold');
+  }
+ }
+class Parent extends Grandparent
+{
+  void getParentdetails(){
+    getGrandparentdetails();
+    print('Parent name-Srivatsan');
+    }
+  void getParentproperty(){
+    getGrandparentproperty();
+    print('Parent property - Car');
+  }
+}
+ class Son extends Parent
+ {
+   void getSondetails(){
+     getParentdetails();
+     print('Son name - Ram');
+     }
+   void getSonproperty(){
+     getParentproperty();
+     print('Son property - house');
+   }
+ }
+void main()
+{
+  var obj = Son();
+  obj.getSondetails();
+  obj.getSonproperty(); 
+			//obj.getParentdetails();
+			//obj.getParentproperty();
+			//obj.getGrandparentdetails();
+			//obj.getGrandparentproperty();
+
+} 
+
+3.class Area
+{
+  void findArea(){
+  double area;
+  double radius=4;
+  double pi=3.14;
+  area=pi*radius*radius;
+  print('Area');			//void getArea()//{print('Area');}  only
+     print(area);
+}
+}
+
+
+class Circle extends Area
+{
+ void findAreaofcircle(){
+    double areaofcircle;
+  double radius=7;
+  double pi=3.14;
+  areaofcircle=pi*radius*radius;
+  print('Area of circle'); 
+  print(areaofcircle); 
+  
+}
+} // This brace closes the Circle class properly.
+
+// The Triangle class must be declared as a top-level class, not inside Circle.
+class Triangle extends Area
+{
+  void findAreaofTriangle(){
+  double triarea;
+  double breadth=4;
+  double height=3;
+    
+  triarea=0.5*breadth*height;
+  print('Area of triangle');  
+  print(triarea);
+  
+}
+}
+
+class Square extends Area
+{
+ void findAreaofSquare(){
+   double side=4;
+   double sqarea; 
+     sqarea=side*side; // Fixed: Declared 'sqarea' as a double
+   print('Area of square');
+   print(sqarea);
+ } 
+}  
+
+class Rectangle extends Area
+  
+{
+void findAreaofRectangle(){
+ double length=5;
+  double breadth=3;
+  double recarea; 
+  recarea=length*breadth;
+  print('Area of rectangle');
+  print(recarea);
+}
+}  
+void main()
+{
+ 
+  Area area = Area();			//Area getarea = Area();
+  area.findArea();			//getarea.getArea();
+  Triangle triarea = Triangle();
+  triarea.findAreaofTriangle();
+  Circle areaofcircle = Circle();
+  areaofcircle.findAreaofcircle();
+  Square sqarea = Square();
+  sqarea.findAreaofSquare();
+  Rectangle recarea = Rectangle();
+  recarea.findAreaofRectangle();
+}
+

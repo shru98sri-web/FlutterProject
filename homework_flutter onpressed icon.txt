@@ -1,0 +1,64 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const FirstOne());
+}
+
+class FirstOne extends StatelessWidget {
+  const FirstOne({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: SecondOne(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class SecondOne extends StatefulWidget {
+  const SecondOne({super.key});
+
+  @override
+  State<SecondOne> createState() => _SecondOneState();
+}
+
+class _SecondOneState extends State<SecondOne> {
+  String message = "Welcome";
+
+  void _updateMessage(String newMessage) {
+    setState(() {
+      message = newMessage;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: const Text("Tuition App"),
+        leading: IconButton(
+          onPressed: () => _updateMessage("Menu Icon Clicked"),
+          icon: const Icon(Icons.menu),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () => _updateMessage("Book Icon Clicked"),
+            icon: const Icon(Icons.book),
+          ),
+          IconButton(
+            onPressed: () => _updateMessage("Settings Icon Clicked"),
+            icon: const Icon(Icons.settings),
+          ),
+        ],
+      ),
+      body: Center(
+        child: Text(
+          message,
+          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}

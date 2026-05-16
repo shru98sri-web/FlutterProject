@@ -1,0 +1,280 @@
+dart classs3 
+
+function with /without argument and return type 
+example
+
+examples addition of three numbers
+multiplication of three numbers
+
+dart class4
+
+android studio setup with plugins flutter and dart .
+copy and place path in environmental variable
+copy and paste path in android studio
+lib to main-chrome(web)
+
+standard program flutter gets executed.(refactor to rename to new dart prog)
+
+dart 5
+classes and object
+
+
+class to function
+class that looks like function is a constructor
+
+class name object no.= function constructor
+
+2 classes with two functions
+
+class Language
+{
+void tamil(){
+      print('Tamil is mothertounge') ; 
+        
+    }
+void english(){
+    print('English is global language');
+}
+    
+}
+
+class Mark
+{
+void tamilMark(){
+    print('Tamil mark is 90');
+    
+}
+
+void englishMark(){
+    print('English mark is 92');
+}
+}
+
+void main()
+{
+    Language lang = Language();
+    lang.tamil();
+    lang.english();
+    Mark mar = Mark();
+    mar.tamilMark();
+    mar.englishMark();
+}
+
+ Output:
+Tamil is mothertounge
+English is global language
+Tamil mark is 90
+English mark is 92
+
+
+class 6:
+
+example 1
+
+class Page{
+    String bgcolor;
+    String title;
+    Page(this.bgcolor,this.title){
+       
+    }
+     show(){
+            print(this.bgcolor);
+            print(this.title);
+            
+        }
+}
+void main()
+{
+Page mpage = Page('green','homepage');
+mpage.show();
+Page propage = Page('red','profile page');
+propage.show();
+}
+
+
+example 2
+
+class Subject{
+  late int a;
+  late String b; //assign variable
+  late double c;
+  
+  //int =1233457678
+  //string='surya'
+  //char='a'
+   
+ void student(){
+    print('$a $b $c');    //nonparameterized constructor
+}
+  
+  Subject(int age,String rollno,double price){
+//     8=a;
+//     5=b;
+    
+//     a=8,    parameterized constructor
+//     b=5;
+     
+a =  age;
+b = rollno;
+c=price;
+  }
+  
+}
+
+void main()
+{
+    Subject sub = Subject(8,'ram',2.7);
+    sub.student();
+
+    }  
+
+
+3. example 3 student
+
+
+class Student{
+   late int a;
+  late String b;
+   late double c;
+  
+ 
+  
+  Student(int age,String rollno,double mark){
+//     8=a;
+//     5=b;
+    
+//     a=8,
+//     b=5;
+     a =  age;
+    b = rollno;
+    c=mark;
+  }
+  
+     void show(){
+    print('$a $b $c');
+}
+}
+
+void main()
+{
+    Student sub = Student(27,'ram',80);
+
+            sub.show();
+
+    } 
+
+class 7
+named parameterized constructor
+
+class Student{			//class
+  late int age;			//variable
+  late String rollNo;
+  late double mark;
+  
+ 
+  
+  Student({required this.age,required this.rollNo,required this.mark});//parameter, parameterized constructor
+  
+  
+     void show(){
+    print('$age $rollNo $mark');
+}
+}
+
+void main()			//function
+{
+    Student stud = Student(age:27,rollNo:'ram',mark:80);//argument
+
+            stud.show();//function calling
+
+    }
+
+2.class Movie{
+  late String Name;
+  late String Genre;
+  late double Duration;
+  
+ 
+  
+  Movie({required this.Name,required this.Genre,required this.Duration});
+  
+  
+     void show(){
+    print('$Name $Genre $Duration');
+}
+}
+
+void main()
+{
+    Movie movie = Movie(Name:'Frozen',Genre:'Fantasy',Duration:2.00);
+
+            movie.show();
+
+    }
+
+3.class Car
+{
+ String name;
+ int modelNumber;
+ double price;
+ 
+ Car({required this.name,required this.modelNumber,required this.price});
+ 
+ void show()
+ {
+ print('$name,$modelNumber,$price');
+ }
+}
+void main()
+{
+    Car c = Car(name:'Suzuki',modelNumber:300,price:400000.00);
+    c.show();
+}
+
+Examples of all 6 types of constructor
+
+1.Default constructor
+2.Parameterized constructor
+3.Named constructor
+4.Constant constructor
+5.Factory constructor
+6.Redirecting constructor
+
+3.Named Constructor
+
+class Person {
+  String? name;
+  String? degree;
+  int? age;
+
+  Person(this.name, this.degree, this.age);
+  // here Mobile() is a named constructor
+  Person.namedConstructor(this.name, this.degree, [this.age = 0]);
+
+  void displayPersonDetails() {
+    print("Person name: $name.");
+    print("Person degree: $degree.");
+    print("Person price: $age");
+  }
+}
+
+void main() {
+  var person1 = Person("Samsung", "bsc", 20000);
+  person1.displayPersonDetails();
+  var person2 = Person.namedConstructor("Apple", "msc");
+  person2.displayPersonDetails();
+}
+
+
+class 8
+
+Parameter belongs to function or constructor
+what is a function?
+How to call a method. Method calling line syntax
+Difference between parameterized constructor and named parameterized constructor
+How to call a function?
+Differentiate between constructor and function 
+What are widgets in Flutter eg,Scaffold?
+Creating appbar and its body.
+
+Class 9

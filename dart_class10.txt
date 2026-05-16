@@ -1,0 +1,821 @@
+Question 1 to 5 
+->just class creation
+->with constructor
+
+1.class Car
+{
+void brand(){
+      print('Car brand is BMW') ; 
+        
+    }
+void price(){
+    print('Car price is 6000000');
+}
+    
+}
+
+void main()
+{
+    Car car = Car();
+    car.brand();
+    car.price();
+    
+}
+
+
+1.class car.
+
+class Car
+ {
+   String brand;
+   int price;
+   String color;
+   
+   Car(this.brand,this.price,this.color);
+    
+   show() {
+     print(this.brand);
+     print(this.price);
+     print(this.color);
+   }
+   
+ }
+void main()
+{
+  Car car1=Car('Celerio',600000,'white');
+  car1.show();
+  Car car2= Car('BMW',5000000,'black');
+  car2.show();
+  
+}
+
+2b.class Student
+ {
+   String name;
+   int age;
+  
+   
+   Student(this.name,this.age);
+    
+   show() {
+     print(this.name);
+     print(this.age);
+   }
+   
+ }
+void main()
+{
+  Student student1=Student('Ram',12);
+  student1.show();
+  Student student2= Student('Shyam',12);
+  student2.show();
+  
+}
+
+2a.class Student
+{
+void name(){
+      print('Name is ram') ; 
+        
+    }
+void age(){
+    print('Age is 12');
+}
+    
+}
+
+void main()
+{
+    Student student = Student();
+    student.name();
+    student.age();
+    
+}
+
+3a.class Mobile
+ {
+   int modelNo;
+   String brand;
+  
+   
+   Mobile(this.modelNo,this.brand);
+    
+   show() {
+     print(this.modelNo);
+     print(this.brand);
+   }
+   
+ }
+void main()
+{
+  Mobile mobile1=Mobile(124,'Vivo');
+  mobile1.show();
+  Mobile mobile2= Mobile(129,'Oppo');
+  mobile2.show();
+  
+}
+
+3b.class Mobile
+{
+void modelNo1(){
+      print('Model number 1 is id 129') ; 
+        
+    }
+void brand1(){
+    print('Model brand 1 is vivo');
+}
+  void modelNo2(){
+      print('Model number 2 is id 124') ; 
+        
+    }
+void brand2(){
+    print('Model brand 2 is vivo');
+}
+    
+}
+
+void main()
+{
+    Mobile mobile = Mobile();
+    mobile.modelNo1();
+    mobile.brand2();
+    mobile.modelNo2();
+  mobile.brand2();
+}
+
+4.class Book
+ {
+   String name;
+   String author;
+  
+   
+   Book(this.name,this.author);
+    
+   display() {
+     print(this.name);
+     print(this.author);
+   }
+   
+ }
+void main()
+{
+  Book book1=Book('Shakespeare','Hamlet');
+  book1.display();
+  Book book2= Book('Rabindranath Tagore','Gitanjali');
+  book2.display();
+  
+}
+
+4b.class Book
+{
+void display(){
+      print('Book name is hamlet by Shakespeare') ; 
+        
+    }
+}
+
+void main()
+{
+    Book book = Book();
+    book.display();
+    
+}
+
+5a.class Employee
+ {
+   String name;
+   String jobtitle;
+  
+   
+   Employee(this.name,this.jobtitle);
+    
+   display() {
+     print(this.name);
+     print(this.jobtitle);
+   }
+   
+ }
+void main()
+{
+  Employee employee1=Employee('Ram','Scientist');
+  employee1.display();
+  Employee employee2= Employee('Shyam','Analyst');
+  employee2.display();
+  
+}
+
+
+5b.class Employee
+{
+void display(){
+      print('Employee name is ram and of age 25') ; 
+        
+    }
+}
+
+void main()
+{
+    Employee employee = Employee();
+    employee.display();
+    
+}
+
+6.class Person {
+Person() {
+    print('Person is an employee ');
+  } 
+}
+
+void main() {
+ 
+Person person = Person();
+}
+
+7.class Bike{
+  
+  String name;
+  int price;
+  Bike(this.name,this.price);
+  
+display()  {
+  print(this.name);
+  print(this.price);
+}    
+}
+void main()
+{
+  Bike bike = Bike('Honda',60000);
+ bike.display();
+}
+
+8.class Laptop{
+    String name;
+    String brand;
+    Laptop(this.name,this.brand){
+       
+    }
+     show(){
+            print(this.name);
+            print(this.brand);
+            
+        }
+}
+void main()
+{
+Laptop laptop1 = Laptop('Core i7','Dell');
+laptop1.show();
+Laptop laptop2 = Laptop('Core i10','Dell');
+laptop2.show();
+}
+
+
+9.class User {
+  String? name;
+  String? color;
+  int? salary;
+
+  User.namedConstructor(this.name, this.color, this.salary);
+
+  void displayUserDetails() {
+    print("User name: $name.");
+    print("User color: $color.");
+    print("User salary: $salary");
+  }
+}
+
+void main() {
+  
+  User user = User.namedConstructor("Ram", "White",60000);
+  user.displayUserDetails();
+}
+
+10.class Product {
+  String name;
+  String color;
+  int price;
+
+  Product.namedConstructor(this.name, this.color, this.price);
+
+  void displayProductDetails() {
+    print("Product name: $name.");
+    print("Product color: $color.");
+    print("Product salary: $price");
+  }
+}
+
+void main() {
+  
+  Product display = Product.namedConstructor('Mobile','White',60000);
+  display.displayProductDetails();
+}
+
+10b.
+
+class Product {
+final String name;
+final double price;
+final int quantity;
+
+  /// Creates a [Product] instance.
+  ///
+  /// [name] must not be null and represents the product's identifier.
+  /// [price] must be non-negative and represents the cost per unit.
+  /// [quantity] must be non-negative and defaults to 1 if not provided.
+  /// Throws an [ArgumentError] if price or quantity are negative.
+
+Product({
+    required this.name,
+    required this.price,
+    this.quantity = 1,
+  }) {
+    if (price < 0) {
+      throw ArgumentError('Product price cannot be negative.');
+    }
+    if (quantity < 0) {
+      throw ArgumentError('Product quantity cannot be negative.');
+    }
+  }
+
+  /// Calculates the total price for this specific product instance
+  /// (price * quantity).
+  double get itemTotalPrice => price * quantity;
+
+  @override
+  String toString() {
+    return 'Product: $name (x${quantity}), Unit Price: \$${price.toStringAsFixed(2)}, Total: \$${itemTotalPrice.toStringAsFixed(2)}';
+  }
+}
+
+/// Main entry point of the program.
+void main() {
+  List<Product> products = [];
+
+  // Simulate user input or predefined products
+  try {
+    products = [
+      Product(name: 'Laptop', price: 1200.00, quantity: 1),
+      Product(name: 'Wireless Mouse', price: 25.99, quantity: 2),
+      Product(name: 'Mechanical Keyboard', price: 79.99), // quantity defaults to 1
+      Product(name: '4K Monitor', price: 350.00, quantity: 2),
+      Product(name: 'USB-C Hub', price: 45.50),
+    ];
+
+    print('--- Product Inventory ---');
+    print('Available products in the cart:\n');
+
+    double grandTotal = 0.0;
+    for (var product in products) {
+      print(product);
+      grandTotal += product.itemTotalPrice;
+    }
+
+    print('\n--- Order Summary ---');
+    print('Total number of distinct product types: ${products.length}');
+    print('Grand Total Price for all items: \$${grandTotal.toStringAsFixed(2)}');
+    print('\nThank you for your order!');
+  } on ArgumentError catch (e) {
+    print('Error creating product: ${e.message}');
+  } catch (e) {
+    print('An unexpected error occurred: $e');
+  }
+}
+
+
+11. 
+
+  class Animal{
+  String name;
+  
+  Animal(this.name);
+  
+  void eat(){
+    print("$name is eating");
+  }
+}
+class Dog extends Animal{
+  Dog(String name): super(name);
+  
+  void bark(){
+    print("$name is bark");
+  }
+}
+
+void main()
+{
+  Animal animal = Animal("Dog");
+  animal.eat();
+  
+}
+
+12.
+class Vehicle{
+  String name;
+  
+  Vehicle(this.name);
+  
+  void sedan(){
+    print("$name is sedan");
+  }
+}
+class Car extends Vehicle{
+  Car(String name): super(name);
+  
+  void nano(){
+    print("$name is nanocar");
+  }
+}
+
+void main()
+{
+  Car car = Car("BMW");
+  car.sedan();
+  
+}
+
+
+13.
+
+class Person{
+  String name;
+  int salary;
+  
+  Person(this.name,this.salary);
+ 
+  
+  void name1(){
+    print('$name is person');
+      
+  }
+
+void salary1(){
+    print('$salary is salary');
+}
+
+}
+class Employee extends Person{
+  // The super constructor 'Person' expects two arguments (name, salary).
+  // The Employee constructor must also accept salary and pass it to super.
+  Employee(String name, int salary): super(name, salary);
+  
+  void name2(){
+    print('$name is employee');
+  }
+  
+   void salary2(){
+    print('$salary is salary');
+  }
+}
+
+void main()
+{
+  Employee employee = Employee('ram',40000);
+  employee.name2();
+  employee.salary2();
+
+  // Example of creating an Employee after the fix:
+  // Employee employee = Employee('john', 50000);
+  // employee.name1();
+  // employee.name2();
+}
+
+
+14.override in name1 and salary1
+
+class Person{
+  String name;
+  int salary;
+  
+  Person(this.name,this.salary);
+ 
+  
+  void name1(){
+    print('$name is person');
+      
+  }
+  
+  void salary1(){
+    print('$salary is salary of person');
+  }
+}
+
+class Employee extends Person{
+  Employee(String name, int salary): super(name, salary);
+  
+  @override // Added @override annotation
+  void name1(){
+    print('$name is employee==>');
+  }
+  
+  @override // Added @override annotation
+  void salary1(){
+    for(int i=0;i<=5;i++){
+      print('$salary is salary==> for employee $i');
+    }  
+  }
+}
+
+void main()
+{
+  Employee employee = Employee('ram',40000);
+  employee.name1();
+  employee.salary1();
+}
+
+
+15.class Grandparent
+{
+  void getGrandparentdetails(){
+    print('Grandfather name-ACK');
+  }
+  void getGrandparentproperty(){
+    print('Grandfather property-Gold');
+  }
+ }
+class Parent extends Grandparent
+{
+  void getParentdetails(){
+    getGrandparentdetails();
+    print('Parent name-Srivatsan');
+    }
+  void getParentproperty(){
+    getGrandparentproperty();
+    print('Parent property - Car');
+  }
+}
+ class Son extends Parent
+ {
+   void getSondetails(){
+     getParentdetails();
+     print('Son name - Ram');
+     }
+   void getSonproperty(){
+     getParentproperty();
+     print('Son property - house');
+   }
+ }
+void main()
+{
+  var obj = Son();
+  obj.getSondetails();
+  obj.getSonproperty(); //obj.getParentdetails();
+			//obj.getParentproperty();
+			//obj.getGrandparentdetails();
+			//obj.getGrandparentproperty();
+
+} 
+
+
+16.class Bike{			//class
+  
+  String name;
+  int price;
+  Bike(this.name,this.price);		//constructor
+  
+display()  {				//method
+  print(this.name);
+  print(this.price);
+}    
+}
+void main()
+{
+  Bike bike = Bike('Honda',60000);		//object creation
+ bike.display();				//method
+}
+
+17.
+class Parent{
+  String name;
+  
+  Parent(this.name);
+  
+  void display(){
+    print('name of parent is $name');
+  }
+}
+class Child extends Parent{
+  Child(String name): super(name);
+  
+  void display2(){
+    print('name of child is $name ');
+  }
+}
+
+void main()
+{
+  Child child = Child("ram");
+  child.display();
+  
+}
+
+output: name of parent is ram
+
+18.import 'dart:math' as math;
+
+class Circle {
+  final double radius;
+  final double area;
+
+
+  Circle(this.radius)
+      : assert(radius >= 0, 'Radius cannot be negative.'),
+        area = math.pi * radius * radius;
+
+  void display() {
+    print(
+        'Circle with radius ${radius.toStringAsFixed(2)} has an area of ${area.toStringAsFixed(2)}');
+  }
+}
+
+void main() {
+  try {
+    final myCircle = Circle(5.0);
+    myCircle.display();
+
+    final anotherCircle = Circle(10.5);
+    anotherCircle.display();
+
+ 
+  } on AssertionError catch (e) {
+    print('Error creating circle: ${e.message}');
+  } catch (e) {
+    print('An unexpected error occurred: $e');
+  }
+}
+
+19.class Bank{
+  String name;
+  String branch;
+  
+  Bank(this.name,this.branch);
+  
+  void display(){
+    print(' $name,$branch');
+  }
+}
+class Customer extends Bank{
+  int balance;
+  int cardNo;
+  
+  Customer(String name,int balance,int cardNo)
+    : this.balance = balance,   
+      this.cardNo = cardNo, 
+        super(name, 'Main Branch'); 
+
+  void display2(){
+    print('name of customer is $name ');
+    print('balance is $balance');       
+    print('cardNo is $cardNo');         
+  }
+}
+
+void main()
+{
+  Customer customer = Customer('Ram',60000,587339976769);
+  customer.display2();
+  
+}
+
+20.class Student {
+  final int age;
+  final String rollNo;
+  final double mark;
+
+  // 1. Primary parameterized constructor
+  
+Student({required this.age, required this.rollNo, required this.mark});
+
+  // 2. Named constructor: Initializes student with a default mark (e.g., 50.0)
+  
+  Student.withDefaultMark({required this.age, required this.rollNo})
+      : mark = 50.0;
+
+  // 3. Named constructor: Initializes student with only a roll number,
+  // providing default values for age (e.g., 18) and mark (e.g., 60.0).
+  
+Student.withRollNoOnly({required this.rollNo})
+      : age = 18,
+        mark = 60.0;
+
+
+  Student.defaultStudent()
+      : age = 0,
+        rollNo = 'UNKNOWN',
+        mark = 0.0;		//Default Named Constructor
+
+  // Method to display student details
+  
+	void show() {
+    print('Age: $age, Roll No: $rollNo, Mark: $mark');
+  }
+}
+
+void main() {
+  // Using the primary parameterized constructor
+  Student stud1 = Student(age: 27, rollNo: 'S001', mark: 80.5);
+  print('--- Student 1 (Primary Constructor) ---');
+  stud1.show(); // Output: Age: 27, Roll No: S001, Mark: 80.5
+
+  // Using the named constructor 'withDefaultMark'
+  Student stud2 = Student.withDefaultMark(age: 20, rollNo: 'S002');
+  print('\n--- Student 2 (withDefaultMark Constructor) ---');
+  stud2.show(); // Output: Age: 20, Roll No: S002, Mark: 50.0
+
+  // Using the named constructor 'withRollNoOnly'
+  Student stud3 = Student.withRollNoOnly(rollNo: '003');
+  print('\n--- Student 3 (withRollNoOnly Constructor) ---');
+  stud3.show(); // Output: Age: 18, Roll No: S003, Mark: 60.0
+
+  // Using the named constructor 'defaultStudent'
+  Student stud4 = Student.defaultStudent();
+  print('\n--- Student 4 (defaultStudent Constructor) ---');
+  stud4.show(); // Output: Age: 0, Roll No: UNKNOWN, Mark: 0.0
+}
+
+class 11
+
+Why inherit?
+In order to add functionality to a class we need to inherit. Class cannot be modified. Inheritance allows you to define a class that extends the functionality of another class.
+
+Dart supports single inheritance. It means that a class can inherit from a single class. Dart doesn’t support multiple inheritance. In other words, a class cannot inherit from two or more classes.
+
+example 15 from class 10 inheritance from class grandparent,parent and son
+example find area
+
+class Area
+{
+   void findArea(){
+    double area;
+  double radius=4;
+  double pi=3.14;
+  area=pi*radius*radius;
+  print('Area');			//void getArea()//{print('Area');}  only
+     print(area);
+}
+}
+
+
+class Circle extends Area
+{
+ void findAreaofcircle(){
+    double areaofcircle;
+  double radius=7;
+  double pi=3.14;
+  areaofcircle=pi*radius*radius;
+  print('Area of circle'); 
+  print(areaofcircle); 
+  
+}
+} // This brace closes the Circle class properly.
+
+// The Triangle class must be declared as a top-level class, not inside Circle.
+class Triangle extends Area
+{
+  void findAreaofTriangle(){
+  double triarea;
+  double breadth=4;
+  double height=3;
+    
+  triarea=0.5*breadth*height;
+  print('Area of triangle');  
+  print(triarea);
+  
+}
+}
+
+class Square extends Area
+{
+ void findAreaofSquare(){
+   double side=4;
+   double sqarea; 
+     sqarea=side*side; // Fixed: Declared 'sqarea' as a double
+   print('Area of square');
+   print(sqarea);
+ } 
+}  
+
+class Rectangle extends Area
+  
+{
+void findAreaofRectangle(){
+ double length=5;
+  double breadth=3;
+  double recarea; 
+  recarea=length*breadth;
+  print('Area of rectangle');
+  print(recarea);
+}
+}  
+void main()
+{
+ 
+  Area area = Area();			//Area getarea = Area();
+  area.findArea();			//getarea.getArea();
+  Triangle triarea = Triangle();
+  triarea.findAreaofTriangle();
+  Circle areaofcircle = Circle();
+  areaofcircle.findAreaofcircle();
+  Square sqarea = Square();
+  sqarea.findAreaofSquare();
+  Rectangle recarea = Rectangle();
+  recarea.findAreaofRectangle();
+}

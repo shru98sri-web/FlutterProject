@@ -1,0 +1,100 @@
+inheritance example
+
+2 subclass - > SavingAccount, RecurringDeposit
+superclass - > BankAccount
+main function - > Application 
+
+
+Saving Account
+
+package com.training;
+
+public class SavingAccount extends BankAccount {
+	
+	private double currentBalance;
+	
+public SavingAccount(double currentBalance) {
+	super();
+	this.currentBalance = currentBalance;
+}
+	@Override
+	public double deposit(double amt) {
+		System.out.println("Saving account Deposit Called");
+		return this.currentBalance +=amt;
+		
+	}
+	
+	@Override
+	public double withdraw(double amt) {
+		System.out.println("Saving account withdraw Called");
+		return this.currentBalance +=amt;
+		
+	}
+}
+
+2.RecurringDeposit
+
+
+package com.training;
+
+public class RecurringDeposit extends BankAccount {
+	
+	private double currentBalance;
+	 public RecurringDeposit(double currentBalance) {
+		 super();
+		 this.currentBalance = currentBalance;
+	 }
+
+	@Override
+	public double deposit(double amt) {
+		return this.currentBalance+=amt;
+	}
+@Override 
+public double withdraw(double amt) {
+	if((this.currentBalance-amt)<5000) {
+		System.out.println("Insufficient Balance");
+		return this.currentBalance;
+	}
+	else {
+		return this.currentBalance-=amt;
+	}
+}
+}
+
+3.Bank Account
+
+package com.training;
+
+public abstract  class BankAccount {
+	
+public abstract double deposit(double amt);
+public abstract double withdraw(double amt);
+
+
+}
+
+4.package com.training;
+
+public class Application {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+BankAccount sbacc = new SavingAccount(5000);
+BankAccount rdacc = new RecurringDeposit(4000);
+
+System.out.println(sbacc.deposit(500));
+System.out.println(sbacc.deposit(1000));
+System.out.println(sbacc.deposit(2000));
+System.out.println(sbacc.withdraw(1000));
+System.out.println(sbacc.withdraw(1500));
+		
+System.out.println("balance:=>"+rdacc.withdraw(500));
+System.out.println("balance:=>"+rdacc.deposit(2000));
+System.out.println("balance:=>"+rdacc.withdraw(600));
+		
+	}
+
+}
+
+//Remove common Currentbalance from subclasses
