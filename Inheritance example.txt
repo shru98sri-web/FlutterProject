@@ -1,11 +1,11 @@
-inheritance example
+//inheritance example
 
-2 subclass - > SavingAccount, RecurringDeposit
+//2 subclass - > SavingAccount, RecurringDeposit
 superclass - > BankAccount
 main function - > Application 
 
 
-Saving Account
+//Saving Account
 
 package com.training;
 
@@ -32,7 +32,7 @@ public SavingAccount(double currentBalance) {
 	}
 }
 
-2.RecurringDeposit
+//2.RecurringDeposit
 
 
 package com.training;
@@ -61,7 +61,7 @@ public double withdraw(double amt) {
 }
 }
 
-3.Bank Account
+//3.Bank Account
 
 package com.training;
 
@@ -73,7 +73,7 @@ public abstract double withdraw(double amt);
 
 }
 
-4.package com.training;
+//4.package com.training;
 
 public class Application {
 
