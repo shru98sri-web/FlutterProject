@@ -1,9 +1,9 @@
-1.Why inherit?
+//1.Why inherit?
 In order to add functionality to a class we need to inherit. Class cannot be modified. Inheritance allows you to define a class that extends the functionality of another class.
 
-Dart supports single inheritance. It means that a class can inherit from a single class. Dart doesn’t support multiple inheritance. In other words, a class cannot inherit from two or more classes.
+//Dart supports single inheritance. It means that a class can inherit from a single class. Dart doesn’t support multiple inheritance. In other words, a class cannot inherit from two or more classes.
 
-2.class Grandparent
+//2.class Grandparent
 {
   void getGrandparentdetails(){
     print('Grandfather name-ACK');
@@ -46,7 +46,7 @@ void main()
 
 } 
 
-3.class Area
+//3.class Area
 {
   void findArea(){
   double area;
