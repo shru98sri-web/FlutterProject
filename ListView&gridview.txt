@@ -1,0 +1,377 @@
+class TogglePageManager extends StatefulWidget {
+  @override
+  _TogglePageManagerState createState() => _TogglePageManagerState();
+}
+
+class _TogglePageManagerState extends State<TogglePageManager> {
+  bool _isToggled = false; // The shared state
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Shared Toggle State')),
+      body: _isToggled ? Grid4window() : List4window(), // Toggle the views
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _isToggled = !_isToggled;
+          });
+        },
+        child: Icon(Icons.swap_horiz,),
+      ),
+    );
+  }
+}
+
+
+class Grid4window extends StatelessWidget {
+  const Grid4window({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final List<Map<String,String>> gridItems = [
+      {'image':'assets/image1/pg1.png','title':'Smart Tuition'},
+      {'image':'assets/image1/pg2.png','title':'Mastery Learning'},
+      {'image':'assets/image1/pg3.png','title':'Satisfactory Teaching and Guidance'},
+      {'image':'assets/image1/pg4.png','title':'Study Online or Offline'},
+      {'image':'assets/image1/pg5.png','title':'Target High Score'},
+      {'image':'assets/image1/pg6.png','title':'Clear Learning'},
+      {'image':'assets/image1/Screenshot7.png','title':'Exam Level Practice'},
+      {'image':'assets/image1/Screenshot5.png','title':'Insightful Presentation and Revision Classes'},
+    ];
+
+    // Alert Dialog
+    void showItemDialog(BuildContext context, String title, String imagePath) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(title),
+            content: const Text('To view clear information click'),
+            actions: [
+              // cancel button
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // close the dialog
+                },
+                child: const Text('Cancel'),
+              ),
+              // elevated button
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close dialog
+                  // navigate to next screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ImageDetail3Screen(
+                        imagePath: imagePath,
+                        title: title,
+                      ),
+                    ),
+                  );
+                },
+                child: const Text('Open View'),
+              ),
+            ],
+          );
+        },
+      );
+    }
+
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Tuition App')),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 0.8,
+            ),
+            itemCount: gridItems.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  // on tap show dialog then from dialog display screen
+                  showItemDialog(
+                    context,
+                    gridItems[index]['title']!,
+                    gridItems[index]['image']!,
+                  );
+                },
+                child: Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                        child: Image.asset(
+                          gridItems[index]['image']!,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          gridItems[index]['title']!,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ),debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+// (Image Detail Screen)
+class ImageDetail3Screen extends StatelessWidget {
+  final String imagePath;
+  final String title;
+
+  const ImageDetail3Screen({
+    super.key,
+    required this.imagePath,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text(title),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: Colors.white,
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Center(
+              child: InteractiveViewer(
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16.0),
+            color: Colors.black54,
+            child: Text(
+              title,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+//import 'package:flutter/material.dart';
+
+class List4window extends StatelessWidget {
+  const List4window({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final List<Map<String, String>> listItems = [
+      {'image': 'assets/image1/pg1.png', 'title': 'Smart Tuition'},
+      {'image': 'assets/image1/pg2.png', 'title': 'Mastery Learning'},
+      {
+        'image': 'assets/image1/pg3.png',
+        'title': 'Satisfactory Teaching and Guidance'
+      },
+      {'image': 'assets/image1/pg4.png', 'title': 'Study Online or Offline'},
+      {'image': 'assets/image1/pg5.png', 'title': 'Target High Score'},
+      {'image': 'assets/image1/pg6.png', 'title': 'Clear Learning'},
+      {'image': 'assets/image1/Screenshot7.png', 'title': 'Exam Level Practice'},
+      {
+        'image': 'assets/image1/Screenshot5.png',
+        'title': 'Insightful Presentation and Revision Classes'
+      },
+    ];
+
+    // Alert Dialog
+    void showItemDialog(BuildContext context, String title, String imagePath) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(title),
+            content: const Text('To view the details click'),
+            actions: [
+              // Cancel button
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // to close dialog
+                },
+                child: const Text('Cancel'),
+              ),
+              // Elevated Button
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // to close previous screen
+                  // open imgdetail screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ImageDetail4Screen(
+                        imagePath: imagePath,
+                        title: title,
+                      ),
+                    ),
+                  );
+                },
+                child: const Text('Open View'),
+              ),
+            ],
+          );
+        },
+      );
+    }
+
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Tuition App')),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          //ListView.builder
+          child: ListView.builder(
+            itemCount: listItems.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  showItemDialog(
+                    context,
+                    listItems[index]['title']!,
+                    listItems[index]['image']!,
+                  );
+                },
+                child: Card(
+                  margin: const EdgeInsets.symmetric(vertical: 6.0),
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  clipBehavior: Clip.antiAlias,
+                  // printing images in row
+                  child: Row(
+                    children: [
+                      // डाव्या बाजूला इमेज
+                      SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset(
+                          listItems[index]['image']!,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      // text alongside image
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Text(
+                            listItems[index]['title']!,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis, // textoverflow indicator
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ),debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+// (Image Detail Screen)
+class ImageDetail4Screen extends StatelessWidget {
+  final String imagePath;
+  final String title;
+
+  const ImageDetail4Screen({
+    super.key,
+    required this.imagePath,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text(title),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: Colors.white,
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Center(
+              child: InteractiveViewer(
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16.0),
+            color: Colors.black54,
+            child: Text(
+              title,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
