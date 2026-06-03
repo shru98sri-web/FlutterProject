@@ -1,0 +1,64 @@
+Encoder and Decoder
+
+1.
+
+import 'dart:convert';
+
+void main() {
+  Map<String, dynamic> user = {'name': 'Alice', 'age': 30};
+
+  // 1. Encoding (Map to JSON String)
+  String jsonString = jsonEncode(user);
+  print(jsonString); // {"name":"Alice","age":30}
+
+  // 2. Decoding (JSON String back to Map)
+  Map<String, dynamic> decodedUser = jsonDecode(jsonString);
+  print(decodedUser['name']); // Alice
+}
+
+
+2.
+
+import 'dart:convert';
+
+void main() {
+  String text = "Hello Dart!";
+
+  // 1. Convert String to UTF-8 Bytes (Encoding)
+  List<int> bytes = utf8.encode(text);
+  print(bytes); // [72, 101, 108, 108, 111, 32, 68, 97, 114, 116, 33]
+
+  // 2. Convert Bytes back to String (Decoding)
+  String originalText = utf8.decode(bytes);
+  print(originalText); // Hello Dart!
+
+  // 3. Fusing UTF-8 and Base64 Codecs together
+  Codec<String, String> stringToBase64 = utf8.fuse(base64);
+  String base64String = stringToBase64.encode(text);
+  print(base64String); // SGVsbG8gRGFydCE=
+}
+
+dispose()
+
+In Flutter, the dispose() method is a lifecycle method used in a StatefulWidget to permanently clean up resources before the widget's State object is destroyed. Overriding this method is essential for freeing memory allocated to active elements—such as controllers, focus nodes, and timers—to prevent critical memory leaks in your mobile applications.
+Why dispose() is CriticalWhen a widget is permanently removed from the Flutter widget tree, its allocated memory is not automatically freed if background tasks or active native platform listeners are still bound to it. If you fail to release these resources, they continue running in the background, consuming CPU resources and draining the user's device battery
+
+MediaQuery
+
+In Flutter, MediaQuery provides information about the device's screen size, orientation, and user preferences to help you build responsive user interfaces. It acts as a bridge between your application and the physical metrics of the host screen.
+
+
+// Efficient approach (rebuilds only on size change)
+Size screenSize = MediaQuery.sizeOf(context);
+double screenWidth = screenSize.width;
+double screenHeight = screenSize.height;
+
+// Avoid unless you need the entire dataset
+MediaQueryData data = MediaQuery.of(context);
+
+snapshot.connectionState: Represents the current status of the task.In Flutter, a snapshot is an immutable wrapper of type AsyncSnapshot that represents the latest point-in-time state and data of an asynchronous operation. It is most commonly found as a parameter inside the builder function of reactive widgets like FutureBuilder and StreamBuilder.The snapshot lets you read whether your asynchronous task is still loading, completed successfully with data, or threw an error, allowing you to update your user interface accordingly.
+
+Encoders and decoders
+
+In Dart, encoders and decoders are handled using the Converter and Codec classes found in the core dart:convert library. An encoder converts data from a high-level representation (like an object or string) into a lower-level format (like a raw string or byte list), while a decoder reverses this process. When two matching converters are paired together, they form a Codec.
+json: Translates between Dart Maps/Lists and raw JSON strings.

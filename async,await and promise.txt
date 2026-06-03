@@ -1,0 +1,297 @@
+async,await and promise codes
+
+1.
+
+Future delayedPrint(int second,String msg)
+{
+  final duration = Duration(seconds: second);
+  return Future.delayed(duration).then((value)=>msg);
+}
+void main() async
+{
+  print("Haste");
+  
+  await delayedPrint(2,"makes").then ((status){
+    print(status);
+    
+  });
+ print("Waste"); 
+}
+
+Output
+Haste 
+makes
+Waste
+
+2.
+
+Future delayedPrint(int second,String msg)
+{
+  final duration = Duration(seconds: second);
+  return Future.delayed(duration).then((value)=>msg);
+}
+void main() async
+{
+  print("Fetching User order");
+  
+  await delayedPrint(2,"Your order is").then ((status){
+    print(status);
+    
+  });
+ print("Backpack"); 
+}
+
+Output
+
+Fetching User order
+Your order is
+Backpack
+
+3.
+
+Future delayedPrint(int second,String msg)
+{
+  final duration = Duration(seconds: second);
+  return Future.delayed(duration).then((value)=>msg);
+}
+void main() async
+{
+  print("Fetching Order Menu");
+  
+  await delayedPrint(2,"The Food is getting cooked").then ((status){
+    print(status);
+    
+  });
+ print("Food Order Delivered"); 
+}
+
+Output
+
+Fetching Order Menu
+The Food is getting cooked
+Food Order Delivered
+
+4.
+
+Future<String>delayFunction(){
+ return Future.delayed(Duration(seconds:5),() =>"Weekday:");
+ 
+}
+
+void main() async {
+  print("Weekend days are Saturday and Sunday");
+  var weekend = ['Saturday','Sunday'];
+  print(weekend);
+  String data = await delayFunction();
+  print(data);
+  print("Weekdays are Monday to Friday");
+  var weekday =['Monday','Tuesday','Wednesday','Thursday','Friday'];
+  print(weekday);
+}
+
+Output
+
+Weekend days are Saturday and Sunday
+[Saturday,Sunday]
+Weekday:
+Weekdays are Monday to Friday
+[Monday,Tuesday,Wednesday,Thursday,Friday]
+
+5.
+
+Future<String>delayFunction(){
+ return Future.delayed(Duration(seconds:5),() =>"Ticket:");
+ 
+}
+
+void main() async {
+  print("International Ticket");
+  var package1 = ['USA','UK'];
+  print(package1);
+  String data = await delayFunction();
+  print(data);
+  print("Domestic Ticket");
+  var package2 =['Delhi','Chennai','Hyderabad','Bengaluru'];
+  print(package2);
+}
+
+Output
+
+International Ticket
+[USA,UK]
+Ticket:
+Domestic Ticket
+[Delhi, Chennai, Hyderabad, Bengaluru]
+
+6.
+
+Future delayedPrint(int second,String msg)
+{
+  final duration = Duration(seconds: second);
+  return Future.delayed(duration).then((value)=>msg);
+}
+void main() async
+{
+  print("Insurance");
+  var insurance=['Coverage','Assurance'];
+  print(insurance);
+  
+  await delayedPrint(5,"Finding different Insurances").then ((status){
+    print(status);
+    
+  });
+ print("2 Insurances found"); 
+  var Insurance2 =['Health','Life'];
+  print(Insurance2);
+}
+
+Output
+
+Insurance
+[Coverage, Assurance]
+Finding different Insurances
+2 Insurances found
+[Health, Life]
+
+7.
+
+Future delayedPrint(int second,String msg)
+{
+  final duration = Duration(seconds: second);
+  return Future.delayed(duration).then((value)=>msg);
+}
+void main() async
+{
+  print("Programming Languages");
+  var prog=['Front End','Backend'];
+  print(prog);
+  
+  await delayedPrint(5,"Finding languages").then ((status){
+    print(status);
+    
+  });
+ print("2 Languages found"); 
+  var progname =['HTML','Python'];
+  print(progname);
+}
+
+Output
+
+Programming Languages
+[Front End, Backend]
+Finding languages
+2 Languages found
+[HTML, Python]
+
+8.
+
+Future delayedPrint(int second,String msg)
+{
+  final duration = Duration(seconds: second);
+  return Future.delayed(duration).then((value)=>msg);
+}
+void main() async
+{
+  print("Programming Languages");
+  var prog=['Front End','Backend'];
+  print(prog);
+  
+  await delayedPrint(5,"Finding languages").then ((status){
+    print(status);
+    
+  });
+ print("2 Languages found"); 
+  var progname =['HTML','Python'];
+if (progname.toString() == ['HTML', 'Java'].toString()) 
+  {
+  print(progname);
+  }
+  else
+  {
+    print('Not the specified programming language');
+
+}
+}
+
+
+Output
+
+Programming Languages
+[Front End, Backend]
+Finding languages
+2 Languages found
+Not the specified programming language
+
+
+9.
+
+Future delayedPrint(int second,String msg)
+{
+  final duration = Duration(seconds: second);
+  return Future.delayed(duration).then((value)=>msg);
+}
+void main() async
+{
+  print("Programming Languages");
+  var prog=['Front End','Backend'];
+  print(prog);
+  
+  await delayedPrint(5,"Finding languages").then ((status){
+    print(status);
+    
+  });
+ print("2 Languages found"); 
+  var progname =['HTML','Python'];
+  
+  for(var i=0;i<=5;i++)
+  {
+  print(progname);
+  }
+ }
+
+Output
+
+Programming Languages
+[Front End, Backend]
+Finding languages
+2 Languages found
+[HTML, Python]
+[HTML, Python]
+[HTML, Python]
+[HTML, Python]
+[HTML, Python]
+[HTML, Python]
+
+
+10.
+
+Future delayedPrint(int second,String msg)
+{
+  final duration = Duration(seconds: second);
+  return Future.delayed(duration).then((value)=>msg);
+}
+void main() async
+{
+  print("Programming Languages");
+  var prog={'Front End','Backend','BackEnd','Database','MobileApp'};
+  print(prog);
+  
+  await delayedPrint(5,"Finding languages").then ((status){
+    print(status);
+    
+  });
+ print("5 Languages found"); 
+  var progname ={'HTML','Python','Java','SQL','Dart'};
+  print(progname);
+  }
+
+Output
+
+Programming Languages
+{Front End, Backend, BackEnd, Database, MobileApp}
+Finding languages
+5 Languages found
+{HTML, Python, Java, SQL, Dart}
+
+
+

@@ -1,0 +1,14 @@
+POST Method -PostMan
+
+URL https://restful-booker.herokuapp.com/auth
+
+Posted Data - Body
+
+{
+    "username":"admin",
+    "password":"password123"
+
+}
+
+Header : Content-Type 
+Value: application/json
