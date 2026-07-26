@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: OhmCalculator(),
-    debugShowCheckedModeBanner: false,
-  ));
-}
+//void main() {
+  //runApp(MaterialApp(
+    //home: OhmCalculator(),
+    //debugShowCheckedModeBanner: false,
+ // ));
+// }
 
 class OhmCalculator extends StatefulWidget {
   @override

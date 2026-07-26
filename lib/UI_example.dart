@@ -3,20 +3,20 @@ import 'package:quickalert/quickalert.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: Shruthi(),
+    home: UI5(),
     debugShowCheckedModeBanner: false,
   ));
 }
 
 // Setting state
-class Shruthi extends StatefulWidget {
-  const Shruthi({super.key});
+class UI5 extends StatefulWidget {
+  const UI5({super.key});
 
   @override
-  State<Shruthi> createState() => _ShruthiState();
+  State<UI5> createState() => _UI5State();
 }
 
-class _ShruthiState extends State<Shruthi> {
+class _UI5State extends State<UI5> {
   final TextEditingController _iController = TextEditingController();
   String classNumberStatus = "0"; // String status variable
 
@@ -37,6 +37,10 @@ class _ShruthiState extends State<Shruthi> {
     _iController.dispose();
     super.dispose();
   }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +65,13 @@ class _ShruthiState extends State<Shruthi> {
             ListTile(
               leading: const Icon(Icons.home),
               title: const Text("Home"),
+              subtitle: const Text("Home Screen"),
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text("Settings"),
+              subtitle: const Text("Settings Screen"),
               onTap: () {
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -77,6 +83,8 @@ class _ShruthiState extends State<Shruthi> {
         ),
       ),
       // 3.Using UI components
+
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -127,14 +135,21 @@ class _ShruthiState extends State<Shruthi> {
               Center(
                 child: Image.asset(
                   'images/Screenshot.png',
-                  height: 150,
-                  width: 150,
+                  height: 250,
+                  width: 250,
                   errorBuilder: (context, error, stackTrace) {
-                    return const Text('Image not found in assets');
+                    return const Column(
+                      children: [
+                        Icon(Icons.broken_image, size: 50, color: Colors.grey),
+                        Text('Image not found in assets', style: TextStyle(color: Colors.red)),
+                      ],
+                    );
                   },
                 ),
               ),
               const SizedBox(height: 20),
+
+
               Center(
                 child: ElevatedButton(
                   onPressed: () {
@@ -145,7 +160,15 @@ class _ShruthiState extends State<Shruthi> {
                     );
                   },
                   child: const Text('Join Class'),
+
                 ),
+              ),
+              const SizedBox(height: 20),
+
+              Center(
+                child: ElevatedButton(onPressed: () { print('Showing Alert');
+                showAlertDialog(context);},
+                    child: Text('Show Alert')),
               ),
             ],
           ),
@@ -153,6 +176,28 @@ class _ShruthiState extends State<Shruthi> {
       ),
     );
   }
+
+  void showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Alert Title'),
+          content: const Text('This is a simple alert message.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                print('Alert Button Clicked');
+                Navigator.of(context).pop(); // Closes the dialog
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
 
   Widget buildTheoryRow(BuildContext context, IconData icon, String text, Color color) {
     return InkWell(

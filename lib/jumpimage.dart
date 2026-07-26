@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/quickalert.dart';
 
-void main() {
-  runApp(Demo());
-}
-class Demo extends StatelessWidget{
+//void main() {
+  //runApp(Demo());
+//}
+
+class jumpimage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
