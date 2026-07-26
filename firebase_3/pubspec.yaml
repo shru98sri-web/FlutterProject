@@ -40,6 +40,11 @@ dependencies:
   firebase_crashlytics: ^5.2.4
   firebase_analytics: ^12.4.3
   firebase_auth: ^6.5.4
+  flutter_bloc: ^8.1.6  # Business logic state management
+  geolocator: ^13.0.0    # Hardware-level live GPS streaming
+  cloud_firestore: ^6.6.0     # Scalable real-time document streaming data warehouse
+
+
 
 
 
