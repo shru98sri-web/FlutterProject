@@ -7,11 +7,11 @@ import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyDCS());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyDCS extends StatelessWidget {
+  const MyDCS({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -69,18 +69,20 @@ class _CsvVisualizerHomeState extends State<CsvVisualizerHome> {
         }
 
         // Parse CSV data (skipping the first row assuming it contains headers)
-        List<List<dynamic>> rows = const CsvToListConverter().convert(
-          csvString,
-        );
+        // Check line breaks and parse data safely
+        String lineEnding = csvString.contains('\r\n') ? '\r\n' : '\n';
+
+        List<List<dynamic>> rows = csv.decode(csvString);
+
         List<FileDataPoint> points = [];
 
         for (int i = 1; i < rows.length; i++) {
-          // Guard clause to ensure the row has at least 2 columns
-          if (rows[i].length >= 2) {
-            var rawX = rows[i][0];
-            var rawY = rows[i][1];
+          if (rows[i].isEmpty) continue; // Skip trailing blank fields safely
 
-            // Safely convert dynamics to doubles
+          if (rows[i].length >= 2) {
+            var rawX = rows[i][0]; // Target first column index cell
+            var rawY = rows[i][1]; // Target second column index cell
+
             double x = rawX is num
                 ? rawX.toDouble()
                 : (double.tryParse(rawX.toString()) ?? 0.0);

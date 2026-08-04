@@ -178,7 +178,6 @@ class _SpectrumAnalyzerHomeState extends State<SpectrumAnalyzerHome> {
           'Academic FFT Spectrum Analyzer',
           style: TextStyle(fontFamily: 'monospace'),
         ),
-        centerTitle: true,
         backgroundColor: const Color(0xFF121214),
         elevation: 0,
       ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:practice/audio_signal.dart';
+import 'package:practice/dual_comb_thz.dart';
 import 'package:practice/ising_model.dart';
-import 'package:practice/lens.dart';
+import 'package:practice/optic_fiber.dart';
 import 'package:practice/plot_graph.dart';
-import 'package:practice/spectrum_chart.dart';
-import 'package:practice/zemax_clone.dart';
+import 'package:practice/raman_scattering.dart';
 
 class App extends StatelessWidget {
   @override
@@ -28,10 +28,10 @@ class _CorporateWizardState extends State<CorporateWizard> {
 
   // The array of pages
   final List<Widget> _pages = [
-    RayTracingApp(),
-    ZemaxCloneApp(),
+    RamanEffectApp(),
+    Fiber(),
     OriginCsvApp(),
-    SpectrumApp(),
+    MyDCS(),
     PostgraduateSpectrumApp(),
     IsingApp(),
   ];
@@ -71,12 +71,12 @@ class _CorporateWizardState extends State<CorporateWizard> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.lens_blur_rounded),
-            label: 'Lens Tracer App',
+            label: 'Raman Effect ',
             backgroundColor: Colors.black87,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.lens_outlined),
-            label: 'Lens Refractive Index',
+            label: 'Fiber Laser',
             backgroundColor: Colors.black87,
           ),
           BottomNavigationBarItem(
@@ -91,7 +91,7 @@ class _CorporateWizardState extends State<CorporateWizard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.speaker),
-            label: 'Spectrum',
+            label: 'Dual Comb Spectroscopy',
             backgroundColor: Colors.black87,
           ),
           BottomNavigationBarItem(

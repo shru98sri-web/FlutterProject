@@ -12,7 +12,10 @@ class Fiber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(home: AdvancedFiberVisualizer());
+    return MaterialApp(
+      home: AdvancedFiberVisualizer(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
 

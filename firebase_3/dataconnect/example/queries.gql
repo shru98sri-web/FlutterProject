@@ -1,18 +1,38 @@
-mutation CreateRole @auth(expr: "auth.token.admin == true") {
-  role_insert(data: {roleName: "Editor", permissions: "read,write"})
+mutation CreateTask($title: String!, $status: String!, $workspaceId: UUID!) @auth(level: USER) {
+  task_insert(
+    data: {
+      title: $title,
+      status: $status,
+      workspaceId: $workspaceId
+    }
+  )
 }
 
-mutation CreateSession($userId: UUID!, $device: String!) @auth(level: USER) {
-  session_insert(data: {userId: $userId, deviceFingerprint: $device, expiresAt: "2025-12-31T23:59:59Z"})
+mutation UpdateTask($id: UUID!, $status: String) @auth(level: USER) {
+  task_update(
+    key: { id: $id },
+    data: { status: $status }
+  )
 }
 
-mutation UpdateUserDisplayName($newDisplayName: String!) @auth(level: USER) {
-  user_update(key: {id_expr: "auth.uid"}, data: {displayName: $newDisplayName})
-}
-
-query ListUserRoles @auth(level: USER) {
-  userRoles {
-    user { email }
-    role { roleName }
+query ListWorkspaceTasks($workspaceId: UUID!) @auth(level: USER) {
+  tasks(where: { workspaceId: { eq: $workspaceId } }) {
+    id
+    title
+    status
+    dueDate
+    assignee {
+      displayName
+    }
   }
+}
+
+mutation AddComment($taskId: UUID!, $text: String!) @auth(level: USER) {
+  comment_insert(
+    data: {
+      taskId: $taskId,
+      authorId_expr: "auth.uid",
+      text: $text
+    }
+  )
 }

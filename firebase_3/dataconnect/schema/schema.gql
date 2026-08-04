@@ -1,34 +1,36 @@
 type User @table {
   email: String!
-  createdAt: Timestamp!
-  displayName: String
-  avatarUrl: String
-  isEnabled: Boolean
+  displayName: String!
+  photoUrl: String
 }
 
-type Role @table {
-  roleName: String!
-  permissions: String! # JSON stored as String
+type Workspace @table {
+  name: String!
+  ownerId: UUID!
   description: String
+  createdAt: Timestamp
 }
 
-type UserRole @table(key: ["user", "role"]) {
-  user: User!
-  role: Role!
+type Task @table {
+  title: String!
+  status: String!
+  dueDate: Timestamp
+  priority: Int
+  workspace: Workspace!
+  parentTask: Task
+  assignee: User
 }
 
-type Session @table {
-  user: User!
-  expiresAt: Timestamp!
-  deviceFingerprint: String!
-  ipAddress: String
-  lastUsedAt: Timestamp
+type Comment @table {
+  text: String!
+  task: Task!
+  author: User!
+  createdAt: Timestamp
 }
 
-type AuditLog @table {
+type WorkspaceMember @table(key: ["workspace", "user"]) {
+  workspace: Workspace!
   user: User!
-  eventType: String!
-  timestamp: Timestamp!
-  metadata: String # JSON stored as String
-  ipAddress: String
+  role: String!
+  joinedAt: Timestamp
 }
