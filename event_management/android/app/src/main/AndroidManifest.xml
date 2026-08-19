@@ -1,4 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Camera Authorization for QR-Matrix Ticket Scanners -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Read/Write System Permissions for Native Device Calendars Injection -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <!-- Background Cloud Push Notification Alert Networks Permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <application
         android:label="event_management"
         android:name="${applicationName}"
@@ -19,6 +32,8 @@
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
+                android:name="com.google.android.gms.wallet.api.enabled"
+                android:value="true"
               />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

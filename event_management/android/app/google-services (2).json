@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "468887271457",
+    "project_id": "geolocator-b2aa6",
+    "storage_bucket": "geolocator-b2aa6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468887271457:android:5e0d55b9f8ddef09100b60",
+        "android_client_info": {
+          "package_name": "com.event.management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU8TRt6OSvSLD_Sw-1fS_1OtFSUEFtN9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
