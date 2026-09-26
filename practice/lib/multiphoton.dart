@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-//void main() => runApp(const MaterialApp(home: MultiphotonScreen()));
+void main() => runApp(const MaterialApp(home: MultiphotonScreen()));
 
 class MultiphotonScreen extends StatefulWidget {
   const MultiphotonScreen({super.key});

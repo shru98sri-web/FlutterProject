@@ -1,0 +1,6 @@
+group: com.example
+name: student-processor
+version: 1.0.0
+
+source-dirs: [ src ]
+output-jar: build/student-processor.jar

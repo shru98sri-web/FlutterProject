@@ -1,0 +1,3 @@
+Required type(s) for C:\Users\vatsa\AndroidStudioProjects\basic_ai_app\build\basic_ai_app.jar:
+  - Main (Main.java):
+

@@ -44,6 +44,7 @@ dependencies:
   record: ^7.1.1
   audio_waveforms: ^2.0.2
   intl: ^0.20.3 # नवीनintl पॅकेज जोडा
+  sensors_plus: ^6.0.0 # Make sure to run 'flutter pub get'
 
 
 
@@ -68,6 +69,7 @@ flutter:
     - shaders/interferometer.frag
     - shaders/interfergr.frag
     - shaders/multiphoton.frag
+    - shaders/wave_fld_helmholtz.frag
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

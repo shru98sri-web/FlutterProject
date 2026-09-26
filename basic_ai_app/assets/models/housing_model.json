@@ -1,0 +1,7 @@
+{
+  "name": "LinearRegressor",
+  "coefficients": [-0.108, 0.046, 0.020, 2.68, -17.76, 3.80, 0.006, -1.47, 0.306, -0.012, -0.95, 0.009, -0.52],
+  "intercept": 36.45,
+  "target_name": "col_13",
+  "dtype": "Float32"
+}
