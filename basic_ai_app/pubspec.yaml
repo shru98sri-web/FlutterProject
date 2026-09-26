@@ -64,6 +64,9 @@ dependencies:
   jb: ^0.16.1
   dartle: ^0.34.1
   jni: ^1.0.3
+  pdf: ^3.10.0      # Library responsible for building native programmatic PDF files
+  printing: ^5.11.0 # Native platform channels hook managing system dialogue triggers
+  fl_chart: ^0.70.0 # Standard Flutter charting library
 
 
 
