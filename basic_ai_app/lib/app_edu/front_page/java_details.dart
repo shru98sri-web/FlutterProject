@@ -68,3 +68,5 @@ void _generateAndPrintStudents(int count) {
     print(student);
   }
 }
+
+//dart --enable-asserts C:\Users\vatsa\AndroidStudioProjects\basic_ai_app\lib\app_edu\front_page\java_details.dart printStudents

@@ -1,25 +1,28 @@
 import 'package:firebase_ai/firebase_ai.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_toolkit/flutter_ai_toolkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-// void main() async {
-//   // Ensure framework engine bindings are active before executing async setups
-//   WidgetsFlutterBinding.ensureInitialized();
-//
-//   // 1. Core Firebase system connection layer initialization
-//   await Firebase.initializeApp(
-//     options: DefaultFirebaseOptions.currentPlatform,
-//   );
-//
-//   runApp(
-//     ChangeNotifierProvider(
-//       create: (_) => StudentProfileProvider(),
-//       child: const EduTechAiApp(),
-//     ),
-//   );
-// }
+import '../../firebase_options.dart';
+
+void main() async {
+  // Ensure framework engine bindings are active before executing async setups
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // 1. Core Firebase system connection layer initialization
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => StudentProfileProvider(),
+      child: const EduTechAiApp(),
+    ),
+  );
+}
 
 /// State provider for tracking student data, track level, and lesson metrics
 class StudentProfileProvider extends ChangeNotifier {

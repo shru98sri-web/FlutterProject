@@ -1,7 +1,7 @@
 package com.example;
 
-public class Main {
-    public static void main(String[] args) {
+public class Stud {
+    public static void Stud(String[] args) {
         System.out.println("=== Generating Student Records (Java) ===");
 
         StringBuilder buffer = new StringBuilder();
