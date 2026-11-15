@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Independent Flutter entrypoints from the FlutterProject repository">
+    <title>FlutterProject Dart Apps</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: system-ui, sans-serif;
+        background: #10131b;
+        color: #f4f6fb;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: radial-gradient(ellipse at top, #202c43, #10131b 55%);
+      }
+
+      main {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 64px 0;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+      }
+
+      p {
+        color: #bbc5d8;
+        line-height: 1.6;
+      }
+
+      .apps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      .card {
+        display: block;
+        padding: 20px;
+        border: 1px solid #35435c;
+        border-radius: 14px;
+        background: #182131;
+        color: inherit;
+        text-decoration: none;
+        transition: border-color 120ms ease, transform 120ms ease;
+      }
+
+      a.card:hover,
+      a.card:focus-visible {
+        border-color: #81a9ff;
+        transform: translateY(-2px);
+      }
+
+      .card span {
+        display: block;
+        margin-top: 6px;
+        color: #bbc5d8;
+        font-size: 0.9rem;
+      }
+
+      .unavailable {
+        border-color: #554653;
+        opacity: 0.78;
+      }
+
+      .card .status {
+        color: #ffb8bf;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>FlutterProject Dart Apps</h1>
+      <p>
+        Each link opens a separate Flutter web build from a Dart file with its own
+        <code>main()</code>. Test files and Dart files without an app entrypoint are
+        not standalone web apps.
+      </p>
+      {{APP_GROUPS}}
+    </main>
+  </body>
+</html>

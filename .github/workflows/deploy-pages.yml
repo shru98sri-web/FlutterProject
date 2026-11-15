@@ -19,16 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: false
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
       - uses: actions/configure-pages@v5
-      - run: flutter pub get
-      - run: flutter build web --release --base-href "/FlutterProject/"
+      - run: bash tool/build_pages.sh
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: build/web
+          path: build/pages-site
 
   deploy:
     environment:

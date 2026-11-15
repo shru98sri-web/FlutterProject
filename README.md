@@ -18,10 +18,16 @@ samples, guidance on mobile development, and a full API reference.
 
 ## GitHub Pages
 
-The `main` branch deploys the Flutter web build to
-[GitHub Pages](https://shru98sri-web.github.io/FlutterProject/). To build locally:
+The `main` branch deploys the root app to
+[GitHub Pages](https://shru98sri-web.github.io/FlutterProject/) and the launcher
+for all Flutter projects to
+[the apps page](https://shru98sri-web.github.io/FlutterProject/apps/). To build
+the complete site locally:
 
 ```sh
-flutter pub get
-flutter build web --release --base-href "/FlutterProject/"
+bash tool/build_pages.sh
 ```
+
+The apps page links to a separate web build for each Dart file under a Flutter
+project's `lib/` directory that defines its own `main()` entry point. Test files
+and helper files without an entry point are not separate apps.
