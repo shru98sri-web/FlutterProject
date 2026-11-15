@@ -15,3 +15,13 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## GitHub Pages
+
+The `main` branch deploys the Flutter web build to
+[GitHub Pages](https://shru98sri-web.github.io/FlutterProject/). To build locally:
+
+```sh
+flutter pub get
+flutter build web --release --base-href "/FlutterProject/"
+```
