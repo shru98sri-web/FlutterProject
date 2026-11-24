@@ -7,6 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SCIENCE_PROJECT = ROOT / "physics_one"
 SITE = ROOT / "build" / "pages-site"
 BASE_HREF = "/FlutterProject/"
 MAIN_PATTERN = re.compile(
@@ -19,19 +20,9 @@ UNBUILDABLE_ENTRYPOINTS = {
         "The referenced pages/, bloc/, and model/ source files are missing."
     ),
 }
-SCIENCE_PROJECT = ROOT / "physics_one"
-
 
 def project_roots():
-    roots = [ROOT]
-    roots.extend(
-        sorted(
-            child
-            for child in ROOT.iterdir()
-            if child.is_dir() and (child / "pubspec.yaml").is_file()
-        )
-    )
-    return roots
+    return [SCIENCE_PROJECT]
 
 
 def has_main(path):
@@ -75,6 +66,8 @@ def entrypoints():
                     raise ValueError(f"Duplicate Pages slug: {slug}")
                 used_slugs.add(slug)
             entries.append((project, source, relative, slug, reason))
+
+    return entries
 
     for project in sorted(
         child
