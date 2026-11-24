@@ -26,10 +26,15 @@ jobs:
           channel: stable
           cache: true
       - uses: actions/configure-pages@v5
-      - run: bash tool/build_pages.sh
+      - name: Install physics_one packages
+        working-directory: physics_one
+        run: flutter pub get
+      - name: Build Science Studio
+        working-directory: physics_one
+        run: flutter build web --release --base-href "/FlutterProject/"
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: build/pages-site
+          path: physics_one/build/web
 
   deploy:
     environment:
@@ -40,3 +45,12 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Report deployment success
+        run: |
+          {
+            echo "## Science Studio deployment successful ✅"
+            echo ""
+            echo "The physics_one single-main science app is live at: ${{ steps.deployment.outputs.page_url }}"
+            echo "Topics are available as separate navigation items in the deployed app."
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "Science Studio deployment successful."
