@@ -19,6 +19,7 @@ UNBUILDABLE_ENTRYPOINTS = {
         "The referenced pages/, bloc/, and model/ source files are missing."
     ),
 }
+SCIENCE_PROJECT = ROOT / "physics_one"
 
 
 def project_roots():
@@ -61,7 +62,7 @@ def entrypoints():
             if reason:
                 slug = ""
             elif project == ROOT and relative == Path("lib/main.dart"):
-                slug = ""
+                slug = "root-lib-main"
             else:
                 project_slug = "root" if project == ROOT else slugify(project.name)
                 source_slug = slugify(relative.with_suffix("").as_posix())
@@ -107,7 +108,7 @@ def build_entry(project, source, slug):
     if not (project / "web" / "index.html").is_file():
         raise FileNotFoundError(f"Missing web/index.html in {project}")
 
-    if project == ROOT and source == ROOT / "lib" / "main.dart":
+    if project == SCIENCE_PROJECT and source == project / "lib" / "main.dart":
         base_href = BASE_HREF
         output = SITE
     else:
@@ -135,6 +136,7 @@ def render_catalog(entries):
     grouped = {}
     for project, _source, relative, slug, reason in entries:
         label = "Repository root" if project == ROOT else project.name.replace("_", " ").title()
+        is_landing = project == SCIENCE_PROJECT and relative == Path("lib/main.dart")
         if reason:
             card = (
                 '<div class="card unavailable" aria-disabled="true">'
@@ -146,7 +148,7 @@ def render_catalog(entries):
                 reason=html.escape(reason),
             )
         else:
-            href = "../" if project == ROOT and not slug else f"{slug}/"
+            href = "../" if is_landing else f"{slug}/"
             card = '<a class="card" href="{href}">{name}<span>{path}</span></a>'.format(
                 href=html.escape(href, quote=True),
                 name=html.escape(relative.name),

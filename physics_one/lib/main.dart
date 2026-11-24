@@ -2,6 +2,8 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import 'module_frame_stub.dart' if (dart.library.html) 'module_frame_web.dart';
+
 void main() => runApp(const ScienceStudioApp());
 
 class ScienceTopic {
@@ -114,18 +116,27 @@ const topics = <ScienceTopic>[
 ];
 
 const scienceFileNames = <String>[
+  'afm.dart',
+  'afm_3d.dart',
   'basic_radar.dart',
   'bernoulli.dart',
   'black_hole.dart',
   'black_hole_simu.dart',
   'brain_cells.dart',
+  'cold_atom_freq.dart',
+  'cold_atom_simulator.dart',
+  'compton_scattering.dart',
+  'coupled_orb_ang_mom_microlaser.dart',
+  'ellipsoid_shrink_quantum_steering.dart',
   'femtosecond_graph.dart',
   'femtosecond_simulator.dart',
   'hamiltonian.dart',
   'hamiltonian_double_pend.dart',
   'hamiltonian_p1,p2.dart',
+  'hall_effect.dart',
   'homepage.dart',
   'hplc_lif_csv.dart',
+  'hydrogen_atom_spectral.dart',
   'izhikevich_brain.dart',
   'lagrangian.dart',
   'lee_disc_thermal_cond.dart',
@@ -134,21 +145,45 @@ const scienceFileNames = <String>[
   'lidar.dart',
   'lidar_effective_range.dart',
   'light_pattern_gen.dart',
+  'lhc-cms.dart',
+  'lens_ray.dart',
+  'lens_ray2.dart',
+  'linbd_bloch_cold_atoms.dart',
   'marangoni_effect.dart',
   'marangoni_simulation.dart',
   'marangoni_time.dart',
+  'main.dart',
+  'optical_circuit_diagram.dart',
   'potentiometer.dart',
   'potentiometer_graph.dart',
+  'q-switching.dart',
+  'qed.dart',
+  'qed_multiph_fock_wigner_phsspc.dart',
+  'quantum_gate_fft_cldatms.dart',
+  'quantum_plasmonics.dart',
+  'quantum_steering.dart',
+  'quantum_steering_ultimate.dart',
+  'quincke method.dart',
   'radar_block.dart',
   'radar_firebase.dart',
   'radar_mapping.dart',
   'riverpod.dart',
   'stokes_law.dart',
   'struc_light_beams_cont_phas_map.dart',
+  'sunyaev-zeldovich_effect.dart',
+  'tangent_fermions.dart',
+  'tangent_fermions_3d.dart',
   'vortex.dart',
   'vortex_bmp.dart',
   'vortex_upload.dart',
+  'rydberg_bloackade_jsontelem_quancoldatm.dart',
 ];
+
+String moduleSlug(String fileName) => fileName
+    .replaceAll('.dart', '')
+    .replaceAll(RegExp(r'[^a-zA-Z0-9]+'), '-')
+    .toLowerCase()
+    .replaceAll(RegExp(r'^-+|-+$'), '');
 
 List<ScienceTopic> buildScienceTabs() => [
   for (var index = 0; index < scienceFileNames.length; index++)
@@ -309,12 +344,21 @@ class _ScienceHomeState extends State<ScienceHome> {
                       ],
                     ),
                     const SizedBox(height: 18),
-                    ExperimentCard(
-                      topic: topic,
-                      value: values[selected],
-                      onChanged: (value) =>
-                          setState(() => values[selected] = value),
-                    ),
+                    if (topic.title == 'main.dart')
+                      const Card(
+                        child: Padding(
+                          padding: EdgeInsets.all(24),
+                          child: Text(
+                            'This is the single main.dart launcher. Select any other tab to run that source file in its compiled module view.',
+                          ),
+                        ),
+                      )
+                    else
+                      ModuleFrame(
+                        title: topic.title,
+                        moduleUrl:
+                            '/FlutterProject/apps/physics-one-lib-${moduleSlug(topic.title)}/',
+                      ),
                     const SizedBox(height: 18),
                     Wrap(
                       spacing: 14,
